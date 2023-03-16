@@ -1,53 +1,65 @@
-<script>
-	import Header from './Header.svelte';
-	import './styles.css';
-</script>
+<header class="header">
+	<h1 class="header__title">Rick And Morty</h1>
+	<div class="header__routes">
+		<ul>
+			<li>
+				<a href="/">Home</a>
+			</li>
+			<li>
+				<a href="/characters">Characters</a>
+			</li>
+			<li>
+				<a href="/locations">Locations</a>
+			</li>
+			<li>
+				<a href="/episodes">Episodes</a>
+			</li>
+		</ul>
+	</div>
+</header>
 
-<div class="app">
-	<Header />
-
-	<main>
-		<slot />
-	</main>
-
-	<footer>
-		<p>visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to learn SvelteKit</p>
-	</footer>
+<div class="container">
+	<slot />
 </div>
 
-<style>
-	.app {
-		display: flex;
-		flex-direction: column;
-		min-height: 100vh;
-	}
+<style lang="scss">
 
-	main {
-		flex: 1;
+  .container {
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+  
+	.header {
 		display: flex;
-		flex-direction: column;
-		padding: 1rem;
-		width: 100%;
-		max-width: 64rem;
-		margin: 0 auto;
-		box-sizing: border-box;
-	}
-
-	footer {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
+		justify-content: space-between;
 		align-items: center;
-		padding: 12px;
-	}
+		background-color: var(--primary-color);
 
-	footer a {
-		font-weight: bold;
-	}
+		&__title {
+			color: var(--secondary-color);
+			font-size: 2rem;
+			padding: 1rem;
+		}
 
-	@media (min-width: 480px) {
-		footer {
-			padding: 12px 0;
+		&__routes {
+			ul {
+				display: flex;
+				list-style: none;
+				margin: 0;
+				padding: 0;
+
+				li {
+					margin: 0 1rem;
+					a {
+						color: var(--secondary-color);
+						text-decoration: none;
+						font-size: 1.5rem;
+					}
+				}
+			}
 		}
 	}
 </style>

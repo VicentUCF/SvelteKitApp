@@ -1,59 +1,32 @@
 <script>
-	import Counter from './Counter.svelte';
-	import welcome from '$lib/images/svelte-welcome.webp';
-	import welcome_fallback from '$lib/images/svelte-welcome.png';
+	import Card from '$lib/components/card.svelte';
 </script>
 
-<svelte:head>
-	<title>Home</title>
-	<meta name="description" content="Svelte demo app" />
-</svelte:head>
+<div class="home__body">
+	<Card
+		name="Characters"
+		image="https://rickandmortyapi.com/api/character/avatar/1.jpeg"
+		url="/characters"
+	/>
 
-<section>
-	<h1>
-		<span class="welcome">
-			<picture>
-				<source srcset={welcome} type="image/webp" />
-				<img src={welcome_fallback} alt="Welcome" />
-			</picture>
-		</span>
+	<Card
+		name="Locations"
+		image="https://rickandmortyapi.com/api/character/avatar/2.jpeg"
+		url="/locations"
+	/>
 
-		to your new<br />SvelteKit app
-	</h1>
+	<Card
+		name="Episodes"
+		image="https://rickandmortyapi.com/api/character/avatar/3.jpeg"
+		url="/episodes"
+	/>
+</div>
 
-	<h2>
-		try editing <strong>src/routes/+page.svelte</strong>
-	</h2>
-
-	<Counter />
-</section>
-
-<style>
-	section {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		flex: 0.6;
-	}
-
-	h1 {
+<style lang="scss">
+	.home__body {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 1rem;
 		width: 100%;
-	}
-
-	.welcome {
-		display: block;
-		position: relative;
-		width: 100%;
-		height: 0;
-		padding: 0 0 calc(100% * 495 / 2048) 0;
-	}
-
-	.welcome img {
-		position: absolute;
-		width: 100%;
-		height: 100%;
-		top: 0;
-		display: block;
 	}
 </style>

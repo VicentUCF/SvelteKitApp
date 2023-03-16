@@ -1,0 +1,16 @@
+@import '@fontsource/fira-mono';
+
+:root {
+	font-family: 'Roboto', sans-serif;
+	--primary-color: #264653;
+	--secondary-color: #2a9d8f;
+	--tertiary-color: #e9c46a;
+	--quaternary-color: #f4a261;
+	--quinary-color: #e76f51;
+}
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
